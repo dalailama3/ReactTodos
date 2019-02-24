@@ -1,7 +1,9 @@
-import { RECEIVE_TODOS, RECEIVE_TODO} from '../actions/todo_actions';
+import { RECEIVE_TODOS, RECEIVE_TODO } from '../actions/todo_actions';
 import { receiveTodos, receiveTodo } from '../actions/todo_actions';
+import allTodos from './selectors';
 window.receiveTodo = receiveTodo
 window.receiveTodos = receiveTodos
+window.allTodos = allTodos
 
 const initialState = {
     1: {
