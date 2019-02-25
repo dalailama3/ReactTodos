@@ -1,4 +1,4 @@
-import { RECEIVE_TODOS, RECEIVE_TODO } from '../actions/todo_actions';
+import { RECEIVE_TODOS, RECEIVE_TODO, DELETE_TODO } from '../actions/todo_actions';
 import { receiveTodos, receiveTodo } from '../actions/todo_actions';
 import allTodos from './selectors';
 window.receiveTodo = receiveTodo
@@ -34,6 +34,12 @@ const todosReducer = (state = initialState, action) => {
             const newTodo = action.todo;
             oldState[newTodo.id] = newTodo;
             return oldState;
+        
+        case DELETE_TODO:
+            let copy = Object.assign({},state)
+            delete copy[action.todoId]
+            return copy;
+            
         default: return state;
     }
 }
