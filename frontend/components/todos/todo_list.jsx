@@ -5,19 +5,25 @@ class TodoList extends React.Component {
         super(props)
 
     this.handleDelete = this.handleDelete.bind(this);
+    this.handleToggle = this.handleToggle.bind(this);
     }
     handleDelete (id) {
       this.props.deleteTodo(id);
     }
     
+    handleToggle (todo) {
+        todo.done = !todo.done;
+        this.props.receiveTodo(todo);
+    }
 
 
     render () {
         const { todos, receiveTodo } = this.props
         const todoItems = todos.map(todo => {
-            return (<li onClick={() => this.handleDelete(todo.id)} key={todo.id}>{todo.title}
+            return (<li key={todo.id}>{todo.title}
                 <br></br><textarea readOnly value={todo.body}></textarea>
-                <button>Delete me</button>
+                <button onClick={() => this.handleDelete(todo.id)} >Delete me</button><br />
+                <button onClick={() => this.handleToggle(todo)}>{todo.done ? 'Done' : 'Undo'}</button>
             </li>)
         })
         return (
