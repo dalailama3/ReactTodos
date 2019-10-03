@@ -1,6 +1,6 @@
 import { RECEIVE_TODOS, RECEIVE_TODO, DELETE_TODO } from '../actions/todo_actions';
 import { receiveTodos, receiveTodo } from '../actions/todo_actions';
-import allTodos from './selectors';
+import { allTodos } from './selectors';
 window.receiveTodo = receiveTodo
 window.receiveTodos = receiveTodos
 window.allTodos = allTodos

@@ -5,6 +5,4 @@ const App = () => {
         <TodoListContainer />
     )
 }
-
-
 export default App;
