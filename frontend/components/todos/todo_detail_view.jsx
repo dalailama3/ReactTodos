@@ -12,7 +12,7 @@ class TodoDetailView extends React.Component {
     }
 
     render () {
-        const { body, todoId } = this.props.children.props;
+        const { body, todoId } = this.props.todo;
         return (
             <div>
                 {body}
