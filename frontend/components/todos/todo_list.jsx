@@ -25,7 +25,7 @@ class TodoList extends React.Component {
             //     <button onClick={() => this.handleToggle(todo)}>{todo.done ? 'Done' : 'Undo'}</button>
             //     {this.state.detail && <TodoDetailViewContainer><TodoDetailView body={todo.body} todoId={todo.id} /></TodoDetailViewContainer>}
             // </li>)
-            return <TodoListItem key={todo.id} todo={todo}/>
+            return <TodoListItem key={todo.id} receiveTodo={receiveTodo} todo={todo}/>
         })
         return (
         <div>
